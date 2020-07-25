@@ -1,0 +1,467 @@
+extends layout
+append content
+		
+	section#hero.d-flex.flex-column.justify-content-end.align-items-center
+		#heroCarousel.container.carousel.carousel-fade(data-ride='carousel')
+			// Slide 1
+			.carousel-item.active
+				.carousel-container
+					h2.animate__animated.animate__fadeInDown
+						|Welcome to 
+						span Mazzo
+					a.btn-get-started.animate__animated.animate__fadeInUp.scrollto(href='#about') Read more
+		svg.hero-waves(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28 ', preserveAspectRatio='none')
+			defs
+				path#wave-path(d='M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z')
+			g.wave1
+				use(xlink:href='#wave-path', x='50', y='3', fill='rgba(255,255,255, .1)')
+			g.wave2
+				use(xlink:href='#wave-path', x='50', y='0', fill='rgba(255,255,255, .2)')
+			g.wave3
+				use(xlink:href='#wave-path', x='50', y='9', fill='#fff')
+	main#main
+
+		section#about.about
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 About
+					p Who we are
+				.row.content(data-aos='fade-up')
+					.col-lg-6
+						p
+							|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							|magna aliqua.
+						ul
+							li
+								i.ri-check-double-line
+								| Ullamco laboris nisi ut aliquip ex ea commodo consequat
+							li
+								i.ri-check-double-line
+								|  Duis aute irure dolor in reprehenderit in voluptate velit
+							li
+								i.ri-check-double-line
+								|  Ullamco laboris nisi ut aliquip ex ea commodo consequat
+					.col-lg-6.pt-4.pt-lg-0
+						p
+							| Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+							| velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+							| culpa qui officia deserunt mollit anim id est laborum.
+						a.btn-learn-more(href='#') Learn More
+
+		section#features.features
+			.container
+				ul.nav.nav-tabs.row.d-flex
+					li.nav-item.col-3(data-aos='zoom-in')
+						a.nav-link.active.show(data-toggle='tab', href='#tab-1')
+							i.ri-gps-line
+							h4.d-none.d-lg-block Modi sit est dela pireda nest
+					li.nav-item.col-3(data-aos='zoom-in', data-aos-delay='100')
+						a.nav-link(data-toggle='tab', href='#tab')
+							i.ri-body-scan-line
+							h4.d-none.d-lg-block Unde praesenti mara setra le
+					li.nav-item.col-3(data-aos='zoom-in', data-aos-delay='200')
+						a.nav-link(data-toggle='tab', href='#tab')
+							i.ri-sun-line
+							h4.d-none.d-lg-block Pariatur explica nitro dela
+					li.nav-item.col-3(data-aos='zoom-in', data-aos-delay='300')
+						a.nav-link(data-toggle='tab', href='#tab')
+							i.ri-store-line
+							h4.d-none.d-lg-block Nostrum qui dile node
+				.tab-content(data-aos='fade-up')
+					#tab-1.tab-pane.active.show
+						.row
+							.col-lg-6.order-2.order-lg-1.mt-3.mt-lg-0
+								h3 Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.
+								p.font-italic
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+									| magna aliqua.
+								ul
+									li
+										i.ri-check-double-line
+										|  Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									li
+										i.ri-check-double-line
+										|  Duis aute irure dolor in reprehenderit in voluptate velit.
+									li
+										i.ri-check-double-line
+										|  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.
+							.col-lg-6.order-1.order-lg-2.text-center
+								img.img-fluid(src='/images/Home/27757.jpg', alt='')
+					// ======= Services Section =======
+		section#services.services
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 Services
+					p What we do offer
+				.row
+					.col-lg-4.col-md-6
+						.icon-box(data-aos='zoom-in-left')
+							.icon
+								i.las.la-basketball-ball(style='color: #ff689b;')
+							h4.title
+								a(href='') Lorem Ipsum
+							p.description
+								| Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+					.col-lg-4.col-md-6.mt-5.mt-md-0
+						.icon-box(data-aos='zoom-in-left', data-aos-delay='100')
+							.icon
+								i.las.la-book(style='color: #e9bf06;')
+							h4.title
+								a(href='') Dolor Sitema
+							p.description
+								| Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata
+					.col-lg-4.col-md-6.mt-5.mt-lg-0
+						.icon-box(data-aos='zoom-in-left', data-aos-delay='200')
+							.icon
+								i.las.la-file-alt(style='color: #3fcdc7;')
+							h4.title
+								a(href='') Sed ut perspiciatis
+							p.description
+								| Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+					.col-lg-4.col-md-6.mt-5
+						.icon-box(data-aos='zoom-in-left', data-aos-delay='300')
+							.icon
+								i.las.la-tachometer-alt(style='color:#41cf2e;')
+							h4.title
+								a(href='') Magni Dolores
+							p.description
+								| Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+					.col-lg-4.col-md-6.mt-5
+						.icon-box(data-aos='zoom-in-left', data-aos-delay='400')
+							.icon
+								i.las.la-globe-americas(style='color: #d6ff22;')
+							h4.title
+								a(href='') Nemo Enim
+							p.description
+								| At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+					.col-lg-4.col-md-6.mt-5
+						.icon-box(data-aos='zoom-in-left', data-aos-delay='500')
+							.icon
+								i.las.la-clock(style='color: #4680ff;')
+							h4.title
+								a(href='') Eiusmod Tempor
+							p.description
+								| Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
+					// End Services Section
+					// ======= Portfolio Section =======
+		section#portfolio.portfolio
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 Portfolio
+					p What we've done
+				ul#portfolio-flters.d-flex.justify-content-end(data-aos='fade-up')
+					li.filter-active(data-filter='*') All
+					li(data-filter='.filter-app') App
+					li(data-filter='.filter-card') Card
+					li(data-filter='.filter-web') Web
+				.row.portfolio-container(data-aos='fade-up')
+					.col-lg-4.col-md-6.portfolio-item.filter-app
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-1.JPG', alt='')
+						.portfolio-info
+							h4 App 1
+							p App
+							a.venobox.preview-link(href='/images/portfolio/portfolio-1.jpg', data-gall='portfolioGallery', title='App 1')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-web
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-2.jpg', alt='')
+						.portfolio-info
+							h4 Web 3
+							p Web
+							a.venobox.preview-link(href='/images/portfolio/portfolio-2.jpg', data-gall='portfolioGallery', title='Web 3')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-app
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-3.jpg', alt='')
+						.portfolio-info
+							h4 App 2
+							p App
+							a.venobox.preview-link(href='/images/portfolio/portfolio-3.jpg', data-gall='portfolioGallery', title='App 2')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-card
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
+						.portfolio-info
+							h4 Card 2
+							p Card
+							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Card 2')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-web
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-5.jpg', alt='')
+						.portfolio-info
+							h4 Web 2
+							p Web
+							a.venobox.preview-link(href='/images/portfolio/portfolio-5.jpg', data-gall='portfolioGallery', title='Web 2')
+								i.bx.bx-plus
+							a.details-link(href='portfolio-details.html', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-app
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-6.jpg', alt='')
+						.portfolio-info
+							h4 App 3
+							p App
+							a.venobox.preview-link(href='/images/portfolio/portfolio-6.jpg', data-gall='portfolioGallery', title='App 3')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-card
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-7.jpg', alt='')
+						.portfolio-info
+							h4 Card 1
+							p Card
+							a.venobox.preview-link(href='/images/portfolio/portfolio-7.jpg', data-gall='portfolioGallery', title='Card 1')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-card
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-8.jpg', alt='')
+						.portfolio-info
+							h4 Card 3
+							p Card
+							a.venobox.preview-link(href='/images/portfolio/portfolio-8.jpg', data-gall='portfolioGallery', title='Card 3')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-web
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-9.jpg', alt='')
+						.portfolio-info
+							h4 Web 1
+							p Web
+							a.venobox.preview-link(href='/images/portfolio/portfolio-9.jpg', data-gall='portfolioGallery', title='Web 3')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					// End Portfolio Section
+					// ======= Testimonials Section =======
+		section#testimonials.testimonials
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 Testimonials
+					p What they are saying about us
+				.owl-carousel.testimonials-carousel(data-aos='fade-up')
+					.testimonial-item
+						p
+							i.bx.bxs-quote-alt-left.quote-icon-left
+							|               Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+							i.bx.bxs-quote-alt-right.quote-icon-right
+						images.testimonial-images(src='/images/testimonials/testimonials-1.jpg', alt='')
+						h3 Saul Goodman
+						h4 Ceo & Founder
+					.testimonial-item
+						p
+							i.bx.bxs-quote-alt-left.quote-icon-left
+							|               Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+							i.bx.bxs-quote-alt-right.quote-icon-right
+						images.testimonial-images(src='/images/testimonials/testimonials-2.jpg', alt='')
+						h3 Sara Wilsson
+						h4 Designer
+					.testimonial-item
+						p
+							i.bx.bxs-quote-alt-left.quote-icon-left
+							|               Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+							i.bx.bxs-quote-alt-right.quote-icon-right
+						images.testimonial-images(src='/images/testimonials/testimonials-3.jpg', alt='')
+						h3 Jena Karlis
+						h4 Store Owner
+					.testimonial-item
+						p
+							i.bx.bxs-quote-alt-left.quote-icon-left
+							|               Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+							i.bx.bxs-quote-alt-right.quote-icon-right
+						images.testimonial-images(src='/images/testimonials/testimonials-4.jpg', alt='')
+						h3 Matt Brandon
+						h4 Freelancer
+					.testimonial-item
+						p
+							i.bx.bxs-quote-alt-left.quote-icon-left
+							|               Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+							i.bx.bxs-quote-alt-right.quote-icon-right
+						images.testimonial-images(src='/images/testimonials/testimonials-5.jpg', alt='')
+						h3 John Larson
+						h4 Entrepreneur
+					// End Testimonials Section
+					// ======= Pricing Section =======
+		section#pricing.pricing
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 Pricing
+					p Our Competing Prices
+				.row
+					.col-lg-3.col-md-6
+						.box(data-aos='zoom-in')
+							h3 Free
+							h4
+								sup $
+								| 0
+								span  / month
+							ul
+								li Aida dere
+								li Nec feugiat nisl
+								li Nulla at volutpat dola
+								li.na Pharetra massa
+								li.na Massa ultricies mi
+							.btn-wrap
+								a.btn-buy(href='#') Buy Now
+					.col-lg-3.col-md-6.mt-4.mt-md-0
+						.box.featured(data-aos='zoom-in', data-aos-delay='100')
+							h3 Business
+							h4
+								sup $
+								| 19
+								span  / month
+							ul
+								li Aida dere
+								li Nec feugiat nisl
+								li Nulla at volutpat dola
+								li Pharetra massa
+								li.na Massa ultricies mi
+							.btn-wrap
+								a.btn-buy(href='#') Buy Now
+					.col-lg-3.col-md-6.mt-4.mt-lg-0
+						.box(data-aos='zoom-in', data-aos-delay='200')
+							h3 Developer
+							h4
+								sup $
+								| 29
+								span  / month
+							ul
+								li Aida dere
+								li Nec feugiat nisl
+								li Nulla at volutpat dola
+								li Pharetra massa
+								li Massa ultricies mi
+							.btn-wrap
+								a.btn-buy(href='#') Buy Now
+					.col-lg-3.col-md-6.mt-4.mt-lg-0
+						.box(data-aos='zoom-in', data-aos-delay='300')
+							span.advanced Advanced
+							h3 Ultimate
+							h4
+								sup $
+								| 49
+								span  / month
+							ul
+								li Aida dere
+								li Nec feugiat nisl
+								li Nulla at volutpat dola
+								li Pharetra massa
+								li Massa ultricies mi
+							.btn-wrap
+								a.btn-buy(href='#') Buy Now
+					// End Pricing Section
+					// ======= F.A.Q Section =======
+		section#faq.faq
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 F.A.Q
+					p Frequently Asked Questions
+				ul.faq-list
+					li(data-aos='fade-up', data-aos-delay='100')
+						a(data-toggle='collapse', href='#faq1')
+							| Non consectetur a erat nam at lectus urna duis? 
+							i.icofont-simple-up
+						#faq1.collapse.show(data-parent='.faq-list')
+							p
+								| Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+					li(data-aos='fade-up', data-aos-delay='200')
+						a.collapsed(data-toggle='collapse', href='#faq2')
+							| Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? 
+							i.icofont-simple-up
+						#faq2.collapse(data-parent='.faq-list')
+							p
+								| Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+					li(data-aos='fade-up', data-aos-delay='300')
+						a.collapsed(data-toggle='collapse', href='#faq3')
+							| Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? 
+							i.icofont-simple-up
+						#faq3.collapse(data-parent='.faq-list')
+							p
+								| Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+					li(data-aos='fade-up', data-aos-delay='400')
+						a.collapsed(data-toggle='collapse', href='#faq4')
+							| Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? 
+							i.icofont-simple-up
+						#faq4.collapse(data-parent='.faq-list')
+							p
+								| Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+					li(data-aos='fade-up', data-aos-delay='500')
+						a.collapsed(data-toggle='collapse', href='#faq5')
+							| Tempus quam pellentesque nec nam aliquam sem et tortor consequat? 
+							i.icofont-simple-up
+						#faq5.collapse(data-parent='.faq-list')
+							p
+								| Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+					li(data-aos='fade-up', data-aos-delay='600')
+						a.collapsed(data-toggle='collapse', href='#faq6')
+							| Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? 
+							i.icofont-simple-up
+						#faq6.collapse(data-parent='.faq-list')
+							p
+								| Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+					// End F.A.Q Section
+					// ======= Team Section =======
+		section#contact.contact
+			.container
+				.section-title(data-aos='zoom-out')
+					h2 Contact
+					p Contact Us
+				.row.mt-5
+					.col-lg-4(data-aos='fade-right')
+						.info
+							.address
+								i.icofont-google-map
+								h4 Location:
+								p A108 Adam Street, New York, NY 535022
+							.email
+								i.icofont-envelope
+								h4 Email:
+								p info@example.com
+							.phone
+								i.icofont-phone
+								h4 Call:
+								p +1 5589 55488 55s
+					.col-lg-8.mt-5.mt-lg-0(data-aos='fade-left')
+						form.php-email-form(action='forms/contact.php', method='post', role='form')
+							.form-row
+								.col-md-6.form-group
+									input#name.form-control(type='text', name='name', placeholder='Your Name', data-rule='minlen:4', data-msg='Please enter at least 4 chars')
+									.validate
+								.col-md-6.form-group
+									input#email.form-control(type='email', name='email', placeholder='Your Email', data-rule='email', data-msg='Please enter a valid email')
+									.validate
+							.form-group
+								input#subject.form-control(type='text', name='subject', placeholder='Subject', data-rule='minlen:4', data-msg='Please enter at least 8 chars of subject')
+								.validate
+							.form-group
+								textarea.form-control(name='message', rows='5', data-rule='required', data-msg='Please write something for us', placeholder='Message')
+								.validate
+							.mb-3
+								.loading Loading
+								.error-message
+								.sent-message Your message has been sent. Thank you!
+							.text-center
+								button(type='submit') Send Message
+
+append footer	
+	
+
+		
+
+					
+
+					
+			
