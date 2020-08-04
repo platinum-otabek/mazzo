@@ -1,0 +1,21 @@
+extends ../layout 
+block content
+       
+    table.table
+        thead
+                tr
+                    th(scope='col') #
+                    th(scope='col') Material Nomi_ru
+                    th(scope='col') Material Nomi_en
+                    th(scope='col') O`chirish
+                    th(scope='col') O`zgartirish
+        each product,index in products
+            tbody
+                tr
+                    td= index+1 
+                    td= product.name_ru
+                    td= product.name_en
+                    td
+                        a.btn.btn-danger.m-2(href="/admin/product/delete/"+product._id) o`chirish
+                    td 
+                        a.btn.btn-warning.m-2(href="/admin/product/update/"+product._id) o`zgartirish    

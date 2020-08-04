@@ -1,0 +1,24 @@
+extends ../layout 
+block content
+    table.table
+        thead
+                tr
+                    th(scope='col') #
+                    th(scope='col') To`plam nomi
+                    th(scope='col') To`plam ichi
+                    th(scope='col') Narxi
+                    th(scope='col') Каталог
+                    th(scope='col') O`chirish
+                    th(scope='col') O`zgartirish
+        each collection,index in collections
+            tbody
+                tr
+                    td= index+1 
+                    td= collection.name_en
+                    td= collection.allItems_en
+                    td= collection.price  
+                    td= collection.product.name_en
+                    td 
+                        a.btn.btn-danger.m-2(href="/admin/collection/delete/"+collection._id) o`chirish
+                    td 
+                        a.btn.btn-warning.m-2(href="/admin/collection/update/"+collection._id) o`zgartirish    

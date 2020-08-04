@@ -1,0 +1,133 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(content='width=device-width, initial-scale=1.0', name='viewport')
+        title Portfolio Details - Selecao Bootstrap Template
+        meta(content='', name='descriptison')
+        meta(content='', name='keywords')
+        // Favicons
+        link(href='/images/favicon.png', rel='icon')
+        link(href='/images/apple-touch-icon.png', rel='apple-touch-icon')
+        // Google Fonts
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i', rel='stylesheet')
+        // Vendor CSS Files
+        link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/vendor/boxicons/css/boxicons.min.css', rel='stylesheet')
+        // Template Main CSS File
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+
+    body
+        // ======= Header =======
+        header#header.fixed-top.d-flex.align-items-center
+            .container.d-flex.align-items-center
+                .logo.mr-auto
+                    h1.text-light
+                        a(href='/en') Mazzo
+                nav.nav-menu.d-none.d-lg-block
+                    ul
+                        li.active
+                            a(href='/en') Home
+                        li
+                            a(href='#about') About us
+                        li
+                            a(href='/en/katalog') Category
+                        
+                        li
+                            a(href='#pricing') Pricing
+                        
+                        li
+                            a(href='#team') Team
+                        li
+                            a(href='#contact') Contacts
+                        li
+                            a(href='/ru') ru
+        main#main
+            section#breadcrumbs.breadcrumbs
+                .container
+                    .d-flex.justify-content-between.align-items-center
+                        h2= collection.name_en
+                        ol
+                            li
+                                a(href='/') Home
+                            li
+                                a(href='/katalog')  Category
+                            li
+                                a(href='/en/katalog/'+product._id)  #{product.name_en}
+            // End Breadcrumbs
+            // ======= Portfolio Details Section =======
+            section#portfolio-details.portfolio-details
+                .container
+                    #myCarousel.carousel.slide(data-ride='carousel')
+                        // Indicators
+                        ol.carousel-indicators
+                            each imgs,index in collection.imgs
+                                li.active(data-target='#myCarousel', data-slide-to= index)
+                            // Wrapper for slides
+                        .carousel-inner
+                            each imgs,index in collection.imgs
+                                .item(class= (index ==0 ? "active":""))
+                                    img.d-block.w-100(src=''+ imgs.url.replace("public",""), alt='', style='')
+                        // Left and right controls
+                        a.left.carousel-control(href='#myCarousel', data-slide='prev')
+                            span.glyphicon.glyphicon-chevron-left
+                            span.sr-only Previous
+                        a.right.carousel-control(href='#myCarousel', data-slide='next')
+                            span.glyphicon.glyphicon-chevron-right
+                            span.sr-only Next
+
+                        .portfolio-info
+                            h3= collection.name_en
+                            ul
+                                li
+                                    strong Каталог
+                                    | : #{product.name_en}
+                                li
+                                    strong Client
+                                    | : 100+
+                                li
+                                    strong  date
+                                    | : 01 March, 2020
+                                li
+                                    strong Nimadir qo`shamizasdasdasdasdasd
+                                    | : 
+                                    a(href='#') :)
+                    .portfolio-description
+                        h2 This is an example of portfolio detail
+                        p
+                            | #{collection.allItems_en}
+        
+        footer#footer
+            .container
+            h3 Mazzo
+            p
+                | Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
+            .social-links
+                a.twitter(href='#')
+                    i.bx.bxl-twitter
+                a.facebook(href='#')
+                    i.bx.bxl-facebook
+                a.instagram(href='#')
+                    i.bx.bxl-instagram
+                a.google-plus(href='#')
+                    i.bx.bxl-skype
+                a.linkedin(href='#')
+                    i.bx.bxl-linkedin
+            .copyright
+                | © Copyright 
+                strong
+                span Selecao
+                | . All Rights Reserved
+            .credits
+                // All the links in the footer should remain intact.
+                // You can delete the links only if you purchased the pro version.
+                // Licensing information: https://bootstrapmade.com/license/
+                // Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/
+                | Designed by 
+                a(href='https://bootstrapmade.com/') BootstrapMade
+        // End Footer
+        a.back-to-top(href='#')
+            i.ri-arrow-up-line

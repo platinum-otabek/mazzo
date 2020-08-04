@@ -1,0 +1,34 @@
+extends ../layout 
+block content
+    .container
+        h1 To`plamni o`zgartirish
+        form(action='/admin/collection/update/'+collection._id method= 'POST')
+            .form-group
+                label.control-label.col-sm-4(for='nameen') Material nomi(Каталог номи):
+                .col-sm-9
+                    input#nameen.form-control(type='text',required name='nameen' value= collection.name_en placeholder='to`plam nomini kiriting(en)')
+            .form-group
+                label.control-label.col-sm-4(for='nameru') Material nomi(Каталог номи):
+                .col-sm-9
+                    input#nameru.form-control(type='text',required name='nameru' value= collection.name_ru placeholder='to`plam nomini kiriting(ru)')
+
+            .form-group
+                label.control-label.col-sm-4(for='allitemsen') To`plam ichi(en):
+                .col-sm-9
+                    textarea#allitemsen.form-control( cols="30", rows="5" required name='allItemsen' placeholder='to`plam ichiga kiradigan kiriting')= collection.allItems_en
+            .form-group
+                label.control-label.col-sm-4(for='allitemsru') To`plam ichi(ru):
+                .col-sm-9
+                    textarea#allitemsru.form-control( cols="30", rows="5" required name='allItemsru' placeholder='to`plam ichiga kiradigan kiriting')= collection.allItems_ru
+
+            .form-group
+                label.control-label.col-sm-4(for='price') Narxi:
+                .col-sm-9
+                    input#price.form-control(type='number',required name='price' value= collection.price  placeholder='to`plam narxini kiriting')
+            
+            input(type="hidden" name='token' value= token)
+            br
+            hr
+            .form-group
+                .col-sm-10
+                    button.btn.btn-primary(type='submit') Kiritish    

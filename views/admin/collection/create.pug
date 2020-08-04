@@ -1,0 +1,42 @@
+extends ../layout 
+block content
+    .container
+        h1 To`plam qo`shish
+        form(action='/admin/collection/create' method= 'POST' enctype="multipart/form-data")
+            .form-group
+                label.control-label.col-sm-4(for='nameen') Material nomi en(Каталог номи):
+                .col-sm-9
+                    input#nameen.form-control(type='text',required name='nameen' placeholder='to`plam nomini en kiriting')
+            form-group
+                label.control-label.col-sm-4(for='nameru') Material nomi ru(Каталог номи):
+                .col-sm-9
+                    input#nameru.form-control(type='text',required name='nameru' placeholder='to`plam nomini ru kiriting')
+            .form-group
+                label.control-label.col-sm-4(for='allitemsen') To`plam ichi en:
+                .col-sm-9
+                    textarea#allitemsen.form-control( cols="30", rows="5" required name='allitemsen' placeholder='to`plam ichiga kiradigan kiriting en')
+            .form-group
+                label.control-label.col-sm-4(for='allitemsru') To`plam ichi ru:
+                .col-sm-9
+                    textarea#allitemsru.form-control( cols="30", rows="5" required name='allitemsru' placeholder='to`plam ichiga kiradigan kiriting ru')
+
+            .form-group
+                label.control-label.col-sm-4(for='price') Narxi:
+                .col-sm-9
+                    input#price.form-control(type='number',required name='price' placeholder='to`plam narxini kiriting')
+            .form-group
+                label.control-label.col-sm-4(for='katalog') Katalogni tanlang:
+                .col-sm-9
+                    select#katalog.form-control(name="katalog")
+                        each katalog in katalogs
+                            option(value= katalog._id)= katalog.name_en
+            .form-group        
+                label.control-label.col-sm-4(for='file') Rasmlarni tanlang:
+                    input#file.form-control(type='file',required name='file' multiple placeholder='Rasmlarni tanlang')
+    
+            input(type="hidden" name='token' value= token)
+            br
+            hr
+            .form-group
+                .col-sm-10
+                    button.btn.btn-primary(type='submit') Kiritish    
