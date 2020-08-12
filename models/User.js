@@ -9,16 +9,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    number: {
-        type: String,
-    },
-    hudud: {
-        type: String,
-    },
-    status:{
-        type: String,
-        required: true
-    }
+
 });
 
 module.exports = mongoose.model('user',userSchema);
