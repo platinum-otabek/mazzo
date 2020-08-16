@@ -21,22 +21,38 @@ router.get('/en', (req, res, next) => {
 router.get('/ru/katalog', async(req, res, next) => {
    products = await Product.find({});
    Oneproduct = await Product.findOne({});
-   collections = await Collection.find({'product':Oneproduct._id});
-  res.render('ru/katalog',{'products':products,'collections':collections,'oneproduct':Oneproduct.name_ru});
+   if(Oneproduct){
+       collections = await Collection.find({'product':Oneproduct._id});
+       res.render('ru/katalog',{'products':products,'collections':collections,'oneproduct':Oneproduct.name_ru});
+   }
+   else {
+       res.redirect('/');
+   }
 });
 
 /* GET katalog page. */
 router.get('/ru/katalog/:id', async(req, res, next) => {
     products = await Product.find({});
     Oneproduct = await Product.findById(req.params.id);
-    collections = await Collection.find({'product':Oneproduct._id});
-    res.render('ru/katalog',{'products':products,'collections':collections,'oneproduct':Oneproduct.name_ru});
+    if(Oneproduct){
+        collections = await Collection.find({'product':Oneproduct._id});
+        res.render('ru/katalog',{'products':products,'collections':collections,'oneproduct':Oneproduct.name_ru});
+    }
+    else {
+        res.redirect('/');
+    }
 });
 /* GET home page. */
 router.get('/ru/collection/:id', async (req, res, next) => {
     collection = await Collection.findById(req.params.id);
     Oneproduct = await Product.findById(collection.product);
-    res.render('ru/collection_id',{'product':Oneproduct,collection});
+    if(Oneproduct){
+        res.render('ru/collection_id',{'product':Oneproduct,collection});
+    }
+    else {
+        res.redirect('/');
+    }
+
 });
 
 
