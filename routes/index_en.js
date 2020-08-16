@@ -29,7 +29,6 @@ router.get('/katalog/:id', async(req, res, next) => {
 router.get('/collection/:id', async (req, res, next) => {
     collection = await Collection.findById(req.params.id);
     Oneproduct = await Product.findById(collection.product);
-    console.log(Oneproduct);
     res.render('en/collection_id',{'product':Oneproduct,collection});
 });
 
