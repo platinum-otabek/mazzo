@@ -61,12 +61,12 @@ app.get('*',(req,res,next)=>{
 })
 
 
-app.use('/en', indexEnRouter);
-app.use('/', indexRuRouter);
 app.use('/users', usersRouter);
-app.use('/collection', collectionRouter);
 app.use('/admin/collection', admincollectionRouter);
 app.use('/admin/product', adminproductRouter);
+app.use('/en', indexEnRouter);
+app.use('/', indexRuRouter);
+app.use('/collection', collectionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
