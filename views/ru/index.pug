@@ -18,7 +18,7 @@ block content
 					li
 						a(href='#contact') Контакты
 					li
-						a(href='/en') ен
+						a(href='/en') eng
 	section#hero.d-flex.flex-column.justify-content-end.align-items-center
 		#heroCarousel.container.carousel.carousel-fade(data-ride='carousel')
 			// Slide 1
@@ -42,7 +42,7 @@ block content
 			.container
 				.section-title(data-aos='zoom-out')
 					h2 О нас
-					p Кто мы
+					p Кто мы?
 				.row.content(data-aos='fade-up')
 					.col-lg-6
 						h2
@@ -175,7 +175,7 @@ block content
 							p Cатин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-1.jpg', data-gall='portfolioGallery', title='App 1')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-web
 						.portfolio-img
@@ -185,7 +185,7 @@ block content
 							p Cитец
 							a.venobox.preview-link(href='/images/portfolio/portfolio-7.jpg', data-gall='portfolioGallery', title='Web 3')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-app
 						.portfolio-img
@@ -195,7 +195,7 @@ block content
 							p Cатин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-3.jpg', data-gall='portfolioGallery', title='App 2')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-card
 						.portfolio-img
@@ -205,11 +205,11 @@ block content
 							p Поплин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Card 2')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-web
 						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
+							img.img-fluid(src='/images/portfolio/portfolio-8.jpg', alt='')
 						.portfolio-info
 							h4 Cитец 2
 							p Cитец
@@ -225,7 +225,7 @@ block content
 							p Cатин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-2.jpg', data-gall='portfolioGallery', title='App 3')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-card
 						.portfolio-img
@@ -235,7 +235,7 @@ block content
 							p Поплин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-6.jpg', data-gall='portfolioGallery', title='Card 1')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-card
 						.portfolio-img
@@ -245,7 +245,7 @@ block content
 							p Поплин
 							a.venobox.preview-link(href='/images/portfolio/portfolio-5.jpg', data-gall='portfolioGallery', title='Card 3')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-web
 						.portfolio-img
@@ -255,7 +255,7 @@ block content
 							p Cитец
 							a.venobox.preview-link(href='/images/portfolio/portfolio-9.jpg', data-gall='portfolioGallery', title='Web 3')
 								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
+							a.details-link(href='/ru/katalog', title='More Details')
 								i.bx.bx-link
 					// End Portfolio Section
 					// ======= Testimonials Section =======
@@ -450,44 +450,40 @@ block content
 						form.php-email-form(action='/', method='post', role='form')
 							.form-row
 								.col-md-6.form-group
-									input#name.form-control(type='text', name='name', placeholder='Ваши имя', data-rule='minlen:4', data-msg='Please enter at least 4 chars')
+									input#name.form-control(type='text', name='name', placeholder='Ваши имя', data-rule='minlen:4', data-msg='Пожалуйста, введите не менее 4 символов')
 									.validate
 								.col-md-6.form-group
-									input#email.form-control(type='email', name='email', placeholder='Ваши почта', data-rule='email', data-msg='Please enter a valid email')
+									input#email.form-control(type='email', name='email', placeholder='Ваши почта', data-rule='email', data-msg='Пожалуйста, введите действительный адрес электронной почты')
 									.validate
 							.form-group
-								input#subject.form-control(type='text', name='subject', placeholder='Subject', data-rule='minlen:4', data-msg='Please enter at least 8 chars of subject')
+								input#subject.form-control(type='text', name='subject', placeholder='Тема', data-rule='minlen:4', data-msg='Пожалуйста, введите не менее 8 символов темы')
 								.validate
 							.form-group
-								textarea.form-control(name='message', rows='5', data-rule='required', data-msg='Please write something for us', placeholder='Message')
+								textarea.form-control(name='message', rows='5', data-rule='required', data-msg='Напишите что-нибудь для нас', placeholder='Сообщение')
 								.validate
 							.mb-3
 								.loading Loading
 								.error-message
-								.sent-message Your message has been sent. Thank you!
+								.sent-message Ваше сообщение отправлено. Спасибо!
 							.text-center
-								button(type='submit') Send Message
+								button(type='submit') Отправить сообщение
 	
 	footer#footer
 		.container
 			h3 Mazzo
 			//p |Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
 			.social-links
-			a.twitter(href='#')
-				i.bx.bxl-twitter
-			a.facebook(href='#')
-				i.bx.bxl-facebook
-			a.instagram(href='#')
-				i.bx.bxl-instagram
-			a.google-plus(href='#')
-				i.bx.bxl-skype
-			a.linkedin(href='#')
-				i.bx.bxl-linkedin
+				a.telegram(href='https://t.me/Mazzo_lux_postel')
+					i.bx.bxl-telegram
+				a.facebook(href='https://www.facebook.com/Mazzo-112011266987526/')
+					i.bx.bxl-facebook
+				a.instagram(href='https://www.instagram.com/invites/contact/?i=wzqzm57fyo3k&utm_content=cpi8om2')
+					i.bx.bxl-instagram
 			.copyright
-			|©Copyright 
+			|©Авторское право
 			strong
-				span Mazzo
-			|.All Rights Reserved
+				span  Mazzo.
+			| Все права защищены
 	a.back-to-top(href='#')
 		i.ri-arrow-up-line
 

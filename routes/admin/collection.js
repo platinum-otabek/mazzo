@@ -42,6 +42,7 @@ router.get('/all',async(req,res,next)=>{
               .select()
               .populate('product','name_en').exec((err,allCollections)=>{
                   if(err){
+                      console.log(err);
                     req.flash('danger','Xatolik');
                     res.redirect('/admin/collection/all');
                   }

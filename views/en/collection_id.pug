@@ -32,17 +32,11 @@ html(lang='en')
                         li.active
                             a(href='/en') Home
                         li
-                            a(href='#about') About us
+                            a(href='/en#about') About us
                         li
                             a(href='/en/katalog') Category
-                        
                         li
-                            a(href='#pricing') Pricing
-                        
-                        li
-                            a(href='#team') Team
-                        li
-                            a(href='#contact') Contacts
+                            a(href='/en#contact') Contacts
                         li
                             a(href='/ru') ru
         main#main
@@ -79,22 +73,22 @@ html(lang='en')
                             span.glyphicon.glyphicon-chevron-right
                             span.sr-only Next
 
-                        .portfolio-info
-                            h3= collection.name_en
-                            ul
-                                li
-                                    strong Каталог
-                                    | : #{product.name_en}
-                                li
-                                    strong Client
-                                    | : 100+
-                                li
-                                    strong  date
-                                    | : 01 March, 2020
-                                li
-                                    strong Nimadir qo`shamizasdasdasdasdasd
-                                    | : 
-                                    a(href='#') :)
+                        //.portfolio-info
+                        //    h3= collection.name_en
+                        //    ul
+                        //        li
+                        //            strong Каталог
+                        //            | : #{product.name_en}
+                        //        li
+                        //            strong Client
+                        //            | : 100+
+                        //        li
+                        //            strong  date
+                        //            | : 01 March, 2020
+                        //        li
+                        //            strong Nimadir qo`shamizasdasdasdasdasd
+                        //            | :
+                        //            a(href='#') :)
                     .portfolio-description
                         h2 This is an example of portfolio detail
                         p
@@ -102,32 +96,19 @@ html(lang='en')
         
         footer#footer
             .container
-            h3 Mazzo
-            p
-                | Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
-            .social-links
-                a.twitter(href='#')
-                    i.bx.bxl-twitter
-                a.facebook(href='#')
-                    i.bx.bxl-facebook
-                a.instagram(href='#')
-                    i.bx.bxl-instagram
-                a.google-plus(href='#')
-                    i.bx.bxl-skype
-                a.linkedin(href='#')
-                    i.bx.bxl-linkedin
-            .copyright
-                | © Copyright 
+                h3 Mazzo
+                //p |Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
+                .social-links
+                    a.telegram(href='https://t.me/Mazzo_lux_postel')
+                        i.bx.bxl-telegram
+                    a.facebook(href='https://www.facebook.com/Mazzo-112011266987526/')
+                        i.bx.bxl-facebook
+                    a.instagram(href='https://www.instagram.com/invites/contact/?i=wzqzm57fyo3k&utm_content=cpi8om2')
+                        i.bx.bxl-instagram
+                .copyright
+                | ©Copyright
                 strong
-                span Selecao
-                | . All Rights Reserved
-            .credits
-                // All the links in the footer should remain intact.
-                // You can delete the links only if you purchased the pro version.
-                // Licensing information: https://bootstrapmade.com/license/
-                // Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/
-                | Designed by 
-                a(href='https://bootstrapmade.com/') BootstrapMade
-        // End Footer
+                    span Mazzo
+                | .All Rights Reserved
         a.back-to-top(href='#')
             i.ri-arrow-up-line
