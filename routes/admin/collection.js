@@ -95,6 +95,7 @@ router.post('/create', (req, res, next)=> {
         });
         newCollection.save((err)=>{
           if(err){
+              console.log(err);
             req.flash('danger','Xatolik');
             res.redirect('/admin/collection/create');
           }
@@ -139,6 +140,7 @@ router.post('/update/:id',async(req,res,next)=> {
 
 
 router.get('/delete/:id',async(req,res,next)=>{
+
     await Collection.findByIdAndDelete(req.params.id,(err)=>{
       if(err){
         req.flash('danger','Xatolik');

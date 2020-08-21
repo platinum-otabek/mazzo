@@ -447,7 +447,7 @@ block content
 								h4 Тел:
 								a(href='tel:++998 90 021 99 77') +998 90 021 99 77
 					.col-lg-8.mt-5.mt-lg-0(data-aos='fade-left')
-						form.php-email-form(action='/', method='post', role='form')
+						form(action='/forms', method='post', role='form')
 							.form-row
 								.col-md-6.form-group
 									input#name.form-control(type='text', name='name', placeholder='Ваши имя', data-rule='minlen:4', data-msg='Пожалуйста, введите не менее 4 символов')
@@ -459,12 +459,13 @@ block content
 								input#subject.form-control(type='text', name='subject', placeholder='Тема', data-rule='minlen:4', data-msg='Пожалуйста, введите не менее 8 символов темы')
 								.validate
 							.form-group
+								input#number.form-control(type='tel',pattern="[0-9]{9}",name='number',required, placeholder='Tel')
+								small.form-text.text-muted.ml-0.pl-1  97 777 77 77
+								.validate
+							.form-group
 								textarea.form-control(name='message', rows='5', data-rule='required', data-msg='Напишите что-нибудь для нас', placeholder='Сообщение')
 								.validate
-							.mb-3
-								.loading Loading
-								.error-message
-								.sent-message Ваше сообщение отправлено. Спасибо!
+							input(type="hidden" value='ru' name='direc')
 							.text-center
 								button(type='submit') Отправить сообщение
 	

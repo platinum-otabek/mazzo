@@ -1,5 +1,6 @@
 extends ../layout
 block content
+
 	header#header.fixed-top.d-flex.align-items-center
 		.container.d-flex.align-items-center
 			.logo.mr-auto
@@ -171,13 +172,24 @@ block content
 					li(data-filter='.filter-card') Poplin
 					li(data-filter='.filter-web') Chintz
 				.row.portfolio-container(data-aos='fade-up')
-					.col-lg-4.col-md-6.portfolio-item.filter-app
+
+					.col-lg-4.col-md-6.portfolio-item.filter-web
 						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-1.JPG', alt='')
+							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
 						.portfolio-info
-							h4 Satin 1
-							p Satin
-							a.venobox.preview-link(href='/images/portfolio/portfolio-1.jpg', data-gall='portfolioGallery', title='App 1')
+							h4 Chintz 2
+							p Chintz
+							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Web 2')
+								i.bx.bx-plus
+							a.details-link(href='portfolio-details.html', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-web
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-9.jpg', alt='')
+						.portfolio-info
+							h4 Chintz 1
+							p Chintz
+							a.venobox.preview-link(href='/images/portfolio/portfolio-9.jpg', data-gall='portfolioGallery', title='Web 3')
 								i.bx.bx-plus
 							a.details-link(href='/portfolio-details', title='More Details')
 								i.bx.bx-link
@@ -201,26 +213,6 @@ block content
 								i.bx.bx-plus
 							a.details-link(href='/portfolio-details', title='More Details')
 								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-card
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
-						.portfolio-info
-							h4 Poplin 2
-							p Poplin
-							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Card 2')
-								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-web
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
-						.portfolio-info
-							h4 Chintz 2
-							p Chintz
-							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Web 2')
-								i.bx.bx-plus
-							a.details-link(href='portfolio-details.html', title='More Details')
-								i.bx.bx-link
 					.col-lg-4.col-md-6.portfolio-item.filter-app
 						.portfolio-img
 							img.img-fluid(src='/images/portfolio/portfolio-2.jpg', alt='')
@@ -228,6 +220,26 @@ block content
 							h4 Satin 3
 							p Satin
 							a.venobox.preview-link(href='/images/portfolio/portfolio-2.jpg', data-gall='portfolioGallery', title='App 3')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-app
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-1.JPG', alt='')
+						.portfolio-info
+							h4 Satin 1
+							p Satin
+							a.venobox.preview-link(href='/images/portfolio/portfolio-1.jpg', data-gall='portfolioGallery', title='App 1')
+								i.bx.bx-plus
+							a.details-link(href='/portfolio-details', title='More Details')
+								i.bx.bx-link
+					.col-lg-4.col-md-6.portfolio-item.filter-card
+						.portfolio-img
+							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
+						.portfolio-info
+							h4 Poplin 2
+							p Poplin
+							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Card 2')
 								i.bx.bx-plus
 							a.details-link(href='/portfolio-details', title='More Details')
 								i.bx.bx-link
@@ -251,16 +263,7 @@ block content
 								i.bx.bx-plus
 							a.details-link(href='/portfolio-details', title='More Details')
 								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-web
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-9.jpg', alt='')
-						.portfolio-info
-							h4 Chintz 1
-							p Chintz
-							a.venobox.preview-link(href='/images/portfolio/portfolio-9.jpg', data-gall='portfolioGallery', title='Web 3')
-								i.bx.bx-plus
-							a.details-link(href='/portfolio-details', title='More Details')
-								i.bx.bx-link
+
 					// End Portfolio Section
 					// ======= Testimonials Section =======
 		//section#testimonials.testimonials
@@ -451,7 +454,7 @@ block content
 								h4 Call:
 								a(href='tel:+998 90 021 99 77') +998 90 021 99 77
 					.col-lg-8.mt-5.mt-lg-0(data-aos='fade-left')
-						form.php-email-form(action='forms/contact.php', method='post', role='form')
+						form(action='/forms', method='post', role='form')
 							.form-row
 								.col-md-6.form-group
 									input#name.form-control(type='text', name='name', placeholder='Your Name', data-rule='minlen:4', data-msg='Please enter at least 4 chars')
@@ -463,12 +466,13 @@ block content
 								input#subject.form-control(type='text', name='subject', placeholder='Subject', data-rule='minlen:4', data-msg='Please enter at least 8 chars of subject')
 								.validate
 							.form-group
+								input#number.form-control(type='tel',pattern="[0-9]{9}",name='number',required, placeholder='Tel')
+								small.form-text.text-muted.ml-0.pl-1  97 777 77 77
+								.validate
+							.form-group
 								textarea.form-control(name='message', rows='5', data-rule='required', data-msg='Please write something for us', placeholder='Message')
 								.validate
-							.mb-3
-								.loading Loading
-								.error-message
-								.sent-message Your message has been sent. Thank you!
+							input(type="hidden" value='en' name='direc')
 							.text-center
 								button(type='submit') Send Message
 	

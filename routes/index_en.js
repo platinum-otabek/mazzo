@@ -5,9 +5,22 @@ const router = express.Router();
 const Product = require('../models/Product');
 const Collection = require('../models/Collection');
 
+const get3element = (data)=>{
+    data = data.slice(data.length<3 ? 0:data.length-3, data.length);
+    return data;
+}
 /* GET home page. */
-router.get('/', (req, res, next) => {
-    res.render('en/index');
+router.get('/', async (req, res, next) => {
+   let products =  await  Product.find(); // oxirgi 3 tani bazadan oladi
+    let collection= {};
+   products =  get3element(products);
+   for (const collection of products){
+       let index=0
+       collection[index] = await Collection.find({"product":products[index]._id});
+       collection[index] = get3element(collection[index]);
+       index++;
+   }
+   res.render('en/index',{"product":collection});
 });
 
 /* GET katalog page. */

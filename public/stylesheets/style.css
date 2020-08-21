@@ -1607,3 +1607,11 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+.size{
+  font-size: 35px;
+  font-weight: bold;
+}
+.collectionRow{
+  font-size: 25px;
+  white-space:pre
+}

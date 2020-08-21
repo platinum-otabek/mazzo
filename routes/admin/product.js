@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../../models/Product');
+const Collection = require('../../models/Collection');
 
 // verify token
 const verifyToken = require('../../middleware/verifyToken');
@@ -63,10 +64,9 @@ router.post('/update/:id',eA,verifyToken, async(req, res, next)=> {
 
 
 /* Delete /id product  page. */ 
-router.get('/delete/:id',eA,(req,res,next)=>{
-    console.log('assadasd');
-    console.log(req.params.id);
-     Product.deleteOne({_id:req.params.id},(err)=>{
+router.get('/delete/:id',eA,async (req,res,next)=>{
+     await Collection.deleteMany({product:req.params.id});
+     await Product.deleteOne({_id:req.params.id},(err)=>{
         res.redirect('/admin/product/all');
     });
     

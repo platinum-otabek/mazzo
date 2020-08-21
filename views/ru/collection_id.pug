@@ -3,29 +3,23 @@ html(lang='en')
     head
         meta(charset='utf-8')
         meta(content='width=device-width, initial-scale=1.0', name='viewport')
-        title Mazzo
+        title Portfolio Details - Selecao Bootstrap Template
         meta(content='', name='descriptison')
         meta(content='', name='keywords')
         // Favicons
-        link(href='/images/mazzo.png', rel='icon' type='image/png')
+        link(href='/images/mazzo.png', rel='icon')
+        link(href='/images/apple-touch-icon.png', rel='apple-touch-icon')
         // Google Fonts
         link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i', rel='stylesheet')
         // Vendor CSS Files
-        link(href='/vendor/bootstrap/css/bootstrap.css', rel='stylesheet')
-
-        link(href='/vendor/icofont/icofont.min.css', rel='stylesheet')
+        link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
         link(href='/vendor/boxicons/css/boxicons.min.css', rel='stylesheet')
-        link(href='/vendor/animate.css/animate.min.css', rel='stylesheet')
-        link(href='/vendor/remixicon/remixicon.css', rel='stylesheet')
-        link(href='/vendor/line-awesome/css/line-awesome.min.css', rel='stylesheet')
-        link(href='/vendor/venobox/venobox.css', rel='stylesheet')
-        link(href='/vendor/owl.carousel/assets/owl.carousel.min.css', rel='stylesheet')
-        link(href='/vendor/aos/aos.css', rel='stylesheet')
         // Template Main CSS File
         link(href='/stylesheets/style.css', rel='stylesheet')
-        link(href='/stylesheets/main.css', rel='stylesheet')
-        link(href='/stylesheets/util.css', rel='stylesheet')
-        link(href='/stylesheets/main_katalog.css', rel='stylesheet')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+
     body
         // ======= Header =======
         header#header.fixed-top.d-flex.align-items-center
@@ -96,14 +90,14 @@ html(lang='en')
                         //            | :
                         //            a(href='#') :)
                     .portfolio-description
-                        h2 This is an example of portfolio detail
-                        p
+                        h2.size Размеры
+                        p.collectionRow
                             | #{collection.allItems_ru}
         
         footer#footer
             .container
                 h3 Mazzo
-                //p |Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
+                p Наши социальные сети
                 .social-links
                     a.telegram(href='https://t.me/Mazzo_lux_postel')
                         i.bx.bxl-telegram
