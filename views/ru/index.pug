@@ -159,104 +159,48 @@ block content
 		section#portfolio.portfolio
 			.container
 				.section-title(data-aos='zoom-out')
-					h2 Портфолио
-					p Что мы создали
+					h2 Portfolio
+					p What we've done
 				ul#portfolio-flters.d-flex.justify-content-end(data-aos='fade-up')
-					li.filter-active(data-filter='*') Всё
-					li(data-filter='.filter-app') Cатин
-					li(data-filter='.filter-card') Поплин
-					li(data-filter='.filter-web') Cитец
+					li.filter-active(data-filter='*') ВСЁ
+					li(data-filter='.filter-app') #{products[0].name_ru}
+					li(data-filter='.filter-card') #{products[1].name_ru}
+					li(data-filter='.filter-web') #{products[2].name_ru}
 				.row.portfolio-container(data-aos='fade-up')
-					.col-lg-4.col-md-6.portfolio-item.filter-app
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-1.JPG', alt='')
-						.portfolio-info
-							h4 Cатин 1
-							p Cатин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-1.jpg', data-gall='portfolioGallery', title='App 1')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-web
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-7.jpg', alt='')
-						.portfolio-info
-							h4 Cитец 3
-							p Cитец
-							a.venobox.preview-link(href='/images/portfolio/portfolio-7.jpg', data-gall='portfolioGallery', title='Web 3')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-app
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-3.jpg', alt='')
-						.portfolio-info
-							h4 Cатин 2
-							p Cатин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-3.jpg', data-gall='portfolioGallery', title='App 2')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-card
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-4.jpg', alt='')
-						.portfolio-info
-							h4 Поплин 2
-							p Поплин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-4.jpg', data-gall='portfolioGallery', title='Card 2')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-web
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-8.jpg', alt='')
-						.portfolio-info
-							h4 Cитец 2
-							p Cитец
-							a.venobox.preview-link(href='/images/portfolio/portfolio-8.jpg', data-gall='portfolioGallery', title='Web 2')
-								i.bx.bx-plus
-							a.details-link(href='portfolio-details.html', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-app
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-2.jpg', alt='')
-						.portfolio-info
-							h4 Cатин 3
-							p Cатин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-2.jpg', data-gall='portfolioGallery', title='App 3')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-card
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-6.jpg', alt='')
-						.portfolio-info
-							h4 Поплин 1
-							p Поплин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-6.jpg', data-gall='portfolioGallery', title='Card 1')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-card
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-5.jpg', alt='')
-						.portfolio-info
-							h4 Поплин 3
-							p Поплин
-							a.venobox.preview-link(href='/images/portfolio/portfolio-5.jpg', data-gall='portfolioGallery', title='Card 3')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
-					.col-lg-4.col-md-6.portfolio-item.filter-web
-						.portfolio-img
-							img.img-fluid(src='/images/portfolio/portfolio-9.jpg', alt='')
-						.portfolio-info
-							h4 Cитец 1
-							p Cитец
-							a.venobox.preview-link(href='/images/portfolio/portfolio-9.jpg', data-gall='portfolioGallery', title='Web 3')
-								i.bx.bx-plus
-							a.details-link(href='/ru/katalog', title='More Details')
-								i.bx.bx-link
+					each collection,index in collections[0]
+						.col-lg-4.col-md-6.portfolio-item.filter-app
+							.portfolio-img
+								img.img-fluid(src=collection.imgs[0].url.replace('public', ''), alt=collection.imgs[0].url.replace('public', ''))
+							.portfolio-info
+								h4=products[0].name_ru
+								p=collection.name_ru
+								a.venobox.preview-link(href=collection.imgs[0].url.replace('public', ''), data-gall='portfolioGallery', title='App 1')
+									i.bx.bx-plus
+								a.details-link(href='/ru/collection/' + collection._id, title='More Details')
+									i.bx.bx-link
+					each collection,index in collections[1]
+						.col-lg-4.col-md-6.portfolio-item.filter-card
+							.portfolio-img
+								img.img-fluid(src=collection.imgs[0].url.replace('public', ''), alt=collection.imgs[0].url.replace('public', ''))
+							.portfolio-info
+								h4=products[0].name_ru
+								p=collection.name_ru
+								a.venobox.preview-link(href=collection.imgs[0].url.replace('public', ''), data-gall='portfolioGallery', title='App 1')
+									i.bx.bx-plus
+								a.details-link(href='/ru/collection/' + collection._id, title='More Details')
+									i.bx.bx-link
+					each collection,index in collections[2]
+						.col-lg-4.col-md-6.portfolio-item.filter-card
+							.portfolio-img
+								img.img-fluid(src=collection.imgs[0].url.replace('public', ''), alt=collection.imgs[0].url.replace('public', ''))
+							.portfolio-info
+								h4=products[0].name_ru
+								p=collection.name_ru
+								a.venobox.preview-link(href=collection.imgs[0].url.replace('public', ''), data-gall='portfolioGallery', title='App 1')
+									i.bx.bx-plus
+								a.details-link(href='/en/collection/' + collection._id, title='More Details')
+									i.bx.bx-link
+
 					// End Portfolio Section
 					// ======= Testimonials Section =======
 		//section#testimonials.testimonials

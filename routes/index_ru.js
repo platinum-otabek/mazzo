@@ -5,13 +5,40 @@ const router = express.Router();
 const Product = require('../models/Product');
 const Collection = require('../models/Collection');
 
+const get3element = (data)=>{ // oxirgi 3tasini  oladi
+    data = data.slice(data.length<3 ? 0:data.length-3, data.length);
+    return data;
+}
+
 /* GET home page. */
-router.get('/', (req, res, next) => {
-    res.render('ru/index');
+router.get('/', async (req, res, next) => {
+    let products =  await  Product.find(); // oxirgi 3 tani bazadan oladi
+    let productCollection=[],collection,index=0;
+    products =  get3element(products);
+
+    for (const collections of products){
+        collection = await Collection.find({"product":collections._id});
+        collection = get3element(collection);
+        productCollection.push(collection); // har bir productdan 3tadan oladi
+        index++;
+    }
+    res.render('ru/index',{"collections":productCollection,"products":products});
+
 });
 /* GET home page. */
-router.get('/ru', (req, res, next) => {
-    res.render('ru/index');
+router.get('/ru', async (req, res, next) => {
+    let products =  await  Product.find(); // oxirgi 3 tani bazadan oladi
+    let productCollection=[],collection,index=0;
+    products =  get3element(products);
+
+    for (const collections of products){
+        collection = await Collection.find({"product":collections._id});
+        collection = get3element(collection);
+        productCollection.push(collection); // har bir productdan 3tadan oladi
+        index++;
+    }
+    res.render('ru/index',{"collections":productCollection,"products":products});
+
 });
 /* GET home page. */
 router.get('/en', (req, res, next) => {
