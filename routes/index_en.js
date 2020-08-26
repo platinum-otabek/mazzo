@@ -11,17 +11,24 @@ const get3element = (data)=>{ // oxirgi 3tasini  oladi
 }
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-   let products =  await  Product.find(); // oxirgi 3 tani bazadan oladi
-    let productCollection=[],collection,index=0;
-   products =  get3element(products);
+  try{
+      let products =  await  Product.find(); // oxirgi 3 tani bazadan oladi
+      let productCollection=[],collection,index=0;
+      products =  get3element(products);
 
-   for (const collections of products){
-       collection = await Collection.find({"product":collections._id});
-       collection = get3element(collection);
-       productCollection.push(collection); // har bir productdan 3tadan oladi
-       index++;
-   }
-   res.render('en/index',{"collections":productCollection,"products":products});
+      for (const collections of products){
+          collection = await Collection.find({"product":collections._id});
+          collection = get3element(collection);
+          productCollection.push(collection); // har bir productdan 3tadan oladi
+          index++;
+      }
+
+      res.render('en/index',{"collections":productCollection,"products":products});
+  }catch (e) {
+
+      res.render('en/index');
+  }
+
 });
 
 /* GET katalog page. */
