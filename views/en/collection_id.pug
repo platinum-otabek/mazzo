@@ -1,97 +1,78 @@
-doctype html
-html(lang='en')
-    head
-        meta(charset='utf-8')
-        meta(content='width=device-width, initial-scale=1.0', name='viewport')
-        title Portfolio Details - Selecao Bootstrap Template
-        meta(content='', name='descriptison')
-        meta(content='', name='keywords')
-        // Favicons
-        link(href='/images/mazzo.png', rel='icon')
-        link(href='/images/apple-touch-icon.png', rel='apple-touch-icon')
-        // Google Fonts
-        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i', rel='stylesheet')
-        // Vendor CSS Files
-        link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
-        link(href='/vendor/boxicons/css/boxicons.min.css', rel='stylesheet')
-        // Template Main CSS File
-        link(href='/stylesheets/style.css', rel='stylesheet')
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+extends ../layout
 
-    body
-        // ======= Header =======
-        header#header.fixed-top.d-flex.align-items-center
-            .container.d-flex.align-items-center
-                .logo.mr-auto
-                    h1.text-light
-                        a(href='/en') Mazzo
-                nav.nav-menu.d-none.d-lg-block
-                    ul
-                        li.active
-                            a(href='/en') Home
-                        li
-                            a(href='/en#about') About us
-                        li
-                            a(href='/en/katalog') Category
-                        li
-                            a(href='/en#contact') Contacts
-                        li
-                            a(href='/ru') ru
-        main#main
-            section#breadcrumbs.breadcrumbs
-                .container
-                    .d-flex.justify-content-between.align-items-center
-                        h2= collection.name_en
-                        ol
-                            li
-                                a(href='/') Home
-                            li
-                                a(href='/katalog')  Category
-                            li
-                                a(href='/en/katalog/'+product._id)  #{product.name_en}
-            // End Breadcrumbs
-            // ======= Portfolio Details Section =======
-            section#portfolio-details.portfolio-details
-                .container
-                    #myCarousel.carousel.slide(data-ride='carousel')
-                        // Indicators
-                        ol.carousel-indicators
-                            each imgs,index in collection.imgs
-                                li.active(data-target='#myCarousel', data-slide-to= index)
-                            // Wrapper for slides
-                        .carousel-inner
-                            each imgs,index in collection.imgs
-                                .item(class= (index ==0 ? "active":""))
-                                    img.d-block.w-100(src=''+ imgs.url.replace("public",""), alt='', style='')
-                        // Left and right controls
-                        a.left.carousel-control(href='#myCarousel', data-slide='prev')
-                            span.glyphicon.glyphicon-chevron-left
-                            span.sr-only Previous
-                        a.right.carousel-control(href='#myCarousel', data-slide='next')
-                            span.glyphicon.glyphicon-chevron-right
-                            span.sr-only Next
-                    .portfolio-description
-                        h1.size Sizes
-                        p.collectionRow
-                            | #{collection.allItems_en}
-        
-        footer#footer
+block content
+    header#header.fixed-top.d-flex.align-items-center
+        .container.d-flex.align-items-center
+            .logo.mr-auto
+                h1.text-light
+                    a(href='/en') Mazzo
+            nav.nav-menu.d-none.d-lg-block
+                ul
+                    li.active
+                        a(href='/en') Home
+                    li
+                        a(href='/en#about') About us
+                    li
+                        a(href='/en/katalog') Category
+
+
+                    li
+                        a(href='/en#contact') Contacts
+                    li
+                        a(href='/ru') rus
+    main#main
+        section#breadcrumbs.breadcrumbs
             .container
-                h3 Mazzo
-                p Our social media
-                .social-links
-                    a.telegram(href='https://t.me/Mazzo_lux_postel')
-                        i.bx.bxl-telegram
-                    a.facebook(href='https://www.facebook.com/Mazzo-112011266987526/')
-                        i.bx.bxl-facebook
-                    a.instagram(href='https://www.instagram.com/invites/contact/?i=wzqzm57fyo3k&utm_content=cpi8om2')
-                        i.bx.bxl-instagram
-                .copyright
-                | ©Copyright
-                strong
-                    span Mazzo
-                | .All Rights Reserved
-        a.back-to-top(href='#')
-            i.ri-arrow-up-line
+                .d-flex.justify-content-between.align-items-center
+                    h2= collection.name_en
+                    ol
+                        li
+                            a(href='/') Home
+                        li
+                            a(href='/katalog')  Category
+                        li
+                            a(href='/en/katalog/'+product._id)  #{product.name_en}
+        // End Breadcrumbs
+        // ======= Portfolio Details Section =======
+        section#portfolio-details.portfolio-details
+            .container
+                #myCarousel.carousel.slide(data-ride='carousel')
+                    // Indicators
+                    ol.carousel-indicators
+                        each imgs,index in collection.imgs
+                            li.active(data-target='#myCarousel', data-slide-to= index)
+                        // Wrapper for slides
+                    .carousel-inner
+                        each imgs,index in collection.imgs
+                            .item(class= (index ==0 ? "active":""))
+                                img.d-block.w-100(src=''+ imgs.url.replace("public",""), alt='', style='')
+                    // Left and right controls
+                    a.left.carousel-control(href='#myCarousel', data-slide='prev')
+                        span.glyphicon.glyphicon-chevron-left
+                        span.sr-only Previous
+                    a.right.carousel-control(href='#myCarousel', data-slide='next')
+                        span.glyphicon.glyphicon-chevron-right
+                        span.sr-only Next
+                .portfolio-description
+                    h1.size Sizes
+                    p.collectionRow
+                        | #{collection.allItems_en}
+
+    footer#footer
+        .container
+            h3 Mazzo
+            p Our social media
+            .social-links
+                a.telegram(href='https://t.me/Mazzo_lux_postel')
+                    i.bx.bxl-telegram
+                a.facebook(href='https://www.facebook.com/Mazzo-112011266987526/')
+                    i.bx.bxl-facebook
+                a.instagram(href='https://www.instagram.com/invites/contact/?i=wzqzm57fyo3k&utm_content=cpi8om2')
+                    i.bx.bxl-instagram
+            .copyright
+            | ©Copyright
+            strong
+                span Mazzo
+            | .All Rights Reserved
+    a.back-to-top(href='#')
+        i.ri-arrow-up-line

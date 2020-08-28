@@ -22,7 +22,7 @@ const collectionSchema = mongoose.Schema({
             }
     }],
     price:{
-        type:Number
+        type:String
     },
     product:{
         type: Schema.Types.ObjectId,
