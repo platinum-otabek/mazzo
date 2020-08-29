@@ -35,45 +35,25 @@ block content
         // End Breadcrumbs
         // ======= Portfolio Details Section =======
         section#portfolio-details.portfolio-details
-            .container
-                #myCarousel.carousel.slide(data-ride='carousel')
-                    // Indicators
-                    ol.carousel-indicators
-                        each imgs,index in collection.imgs
-                            li.active(data-target='#myCarousel', data-slide-to= index)
-                        // Wrapper for slides
-                    .carousel-inner
-                        each imgs,index in collection.imgs
-                            .item(class= (index ==0 ? "active":""))
-                                img.d-block.w-100(src=''+ imgs.url.replace("public",""), alt='', style='')
-                    // Left and right controls
-                    a.left.carousel-control(href='#myCarousel', data-slide='prev')
-                        span.glyphicon.glyphicon-chevron-left
-                        span.sr-only Previous
-                    a.right.carousel-control(href='#myCarousel', data-slide='next')
-                        span.glyphicon.glyphicon-chevron-right
-                        span.sr-only Next
 
-                    //.portfolio-info
-                    //    h3= collection.name_ru
-                    //    ul
-                    //        li
-                    //            strong Каталог
-                    //            | : #{product.name_ru}
-                    //        li
-                    //            strong Client
-                    //            | : 100+
-                    //        li
-                    //            strong  date
-                    //            | : 01 March, 2020
-                    //        li
-                    //            strong Nimadir qo`shamizasdasdasdasdasd
-                    //            | :
-                    //            a(href='#') :)
-                .portfolio-description
-                    h2.size Размеры
-                    p.collectionRow
-                        | #{collection.allItems_ru}
+            #carouselExampleInterval.carousel.slide(data-ride='carousel')
+                .carousel-inner.col-sm-10.offset-sm-1
+                    each imgs,index in collection.imgs
+                        .carousel-item(class= (index ==0 ? "active":""))(data-interval='10000')
+                            img.img-fluid(src=''+ imgs.url.replace("public",""), alt='', style='')
+
+                a.carousel-control-prev(href='#carouselExampleInterval', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleInterval', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+
+            .portfolio-description.col-sm-10.offset-sm-1
+                h2.size Размеры
+                p.collectionRow
+                    | #{collection.allItems_ru}
+
 
     footer#footer
         .container

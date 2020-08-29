@@ -19,7 +19,7 @@ block content
                     li
                         a(href='/en#contact') Contacts
                     li
-                        a(href='/ru') rus
+                        a(href='/rus') rus
     main#main
         section#breadcrumbs.breadcrumbs
             .container
@@ -27,41 +27,38 @@ block content
                     h2= collection.name_en
                     ol
                         li
-                            a(href='/') Home
+                            a(href='/en') Home
                         li
-                            a(href='/katalog')  Category
+                            a(href='/en/katalog')  Category
                         li
                             a(href='/en/katalog/'+product._id)  #{product.name_en}
         // End Breadcrumbs
         // ======= Portfolio Details Section =======
         section#portfolio-details.portfolio-details
-            .container
-                #myCarousel.carousel.slide(data-ride='carousel')
-                    // Indicators
-                    ol.carousel-indicators
-                        each imgs,index in collection.imgs
-                            li.active(data-target='#myCarousel', data-slide-to= index)
-                        // Wrapper for slides
-                    .carousel-inner
-                        each imgs,index in collection.imgs
-                            .item(class= (index ==0 ? "active":""))
-                                img.d-block.w-100(src=''+ imgs.url.replace("public",""), alt='', style='')
-                    // Left and right controls
-                    a.left.carousel-control(href='#myCarousel', data-slide='prev')
-                        span.glyphicon.glyphicon-chevron-left
-                        span.sr-only Previous
-                    a.right.carousel-control(href='#myCarousel', data-slide='next')
-                        span.glyphicon.glyphicon-chevron-right
-                        span.sr-only Next
-                .portfolio-description
-                    h1.size Sizes
-                    p.collectionRow
-                        | #{collection.allItems_en}
+
+            #carouselExampleInterval.carousel.slide(data-ride='carousel')
+                .carousel-inner.col-sm-10.offset-sm-1
+                    each imgs,index in collection.imgs
+                        .carousel-item(class= (index ==0 ? "active":""))(data-interval='10000')
+                            img.img-fluid(src=''+ imgs.url.replace("public",""), alt='', style='')
+
+                a.carousel-control-prev(href='#carouselExampleInterval', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleInterval', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+
+            .portfolio-description.col-sm-10.offset-sm-1
+                h2.size Sizes
+                p.collectionRow
+                    | #{collection.allItems_en}
+
 
     footer#footer
         .container
             h3 Mazzo
-            p Our social media
+            p Our social links
             .social-links
                 a.telegram(href='https://t.me/Mazzo_lux_postel')
                     i.bx.bxl-telegram
@@ -72,7 +69,7 @@ block content
             .copyright
             | ©Copyright
             strong
-                span Mazzo
-            | .All Rights Reserved
+                span  Mazzo.
+            |  All rights reserved
     a.back-to-top(href='#')
         i.ri-arrow-up-line
